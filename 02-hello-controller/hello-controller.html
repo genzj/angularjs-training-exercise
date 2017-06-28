@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="helloApp">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../lib/cloak.css" />
+  <title>Hello AngularJS</title>
+</head>
+
+<body ng-controller="HelloController" ng-cloak>
+  <input type="text" ng-model="name" />
+  <div ng-click="sayMorning(name)">
+    Hello, {{name}}!
+  </div>
+
+  <script src="../lib/angular.min.js"></script>
+  <script src="./controller.js"></script>
+</body>
+
+</html>

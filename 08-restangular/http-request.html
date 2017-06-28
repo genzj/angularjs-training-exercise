@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="restApp">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../lib/cloak.css" />
+  <link rel="stylesheet" href="../lib/style.css">
+  <title>Hello HTTP</title>
+</head>
+
+<body ng-controller="HttpController" ng-cloak>
+  <button ng-click="list()" ng-disabled="running">List Gateways</button>
+  <button ng-click="create()" ng-disabled="running">Create a Gateway</button>
+
+
+  <pre ng-show="serverData" class="code code-javascript"><label>Results</label><code >{{ serverData }}</code></pre>
+  <pre ng-show="metaData" class="code code-meta"><label>Meta Data</label><code >{{ metaData }}</code></pre>
+  <pre ng-show="errorMsg" class="code code-error"><label>Error</label><code >{{ errorMsg }}</code></pre>
+
+  <script src="../lib/underscore-1.8.3.min.js"></script>
+  <script src="../lib/angular.min.js"></script>
+  <script src="../lib/restangular-1.5.1.min.js"></script>
+  <script src="./http-request.js"></script>
+</body>
+
+</html>

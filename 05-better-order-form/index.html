@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Learn AngularJS - Order Form</title>
+
+		<link href="https://fonts.proxy.ustclug.org/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+
+		<link rel="stylesheet" href="../lib/cloak.css">
+		<!-- The main CSS file -->
+		<link href="style.css" rel="stylesheet" />
+	</head>
+
+	<!-- Declare a new AngularJS app and associate the controller -->
+	<body ng-app="orderApp" ng-controller="OrderFormController">
+
+		<form>
+
+			<h1>Services</h1>
+
+			<ul ng-cloak>
+				<!-- Loop through the services array, assign a click handler, and set or
+					remove the "active" css class if needed -->
+				<li ng-repeat="service in services" ng-click="toggleActive(service)" ng-class="{active:service.active}">
+					<!-- Notice the use of the currency filter, it will format the price -->
+					{{service.name}} <span>{{service.price | rmb}}</span>
+				</li>
+			</ul>
+
+			<div class="total ng-cloak">
+				<!-- Calculate the total price of all chosen services. Format it as currency. -->
+				Total: <span>{{total() | rmb}}</span>
+			</div>
+
+		</form>
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="../lib/angular.min.js"></script>
+		<script src="./script.js"></script>
+	</body>
+</html>

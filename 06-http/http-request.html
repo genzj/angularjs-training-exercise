@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="restApp">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../lib/cloak.css" />
+  <link rel="stylesheet" href="../lib/style.css">
+  <title>Hello HTTP</title>
+</head>
+
+<body ng-controller="HttpController" ng-cloak>
+  <button ng-click="request()" ng-disabled="running">Send Request</button>
+
+  <pre ng-show="serverData" class="code code-javascript"><label>Results</label><code >{{ serverData }}</code></pre>
+  <pre ng-show="errorMsg" class="code code-error"><label>Error</label><code >{{ errorMsg }}</code></pre>
+
+  <script src="../lib/angular.min.js"></script>
+  <script src="./http-request.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="timerApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../lib/cloak.css" />
+    <link rel="stylesheet" href="./stopwatch.css">
+    <title>Angular Timer</title>
+</head>
+<body ng-controller="TimerController" ng-style="{'background-color': color}">
+    <div class="wrapper">
+        <h1>Stopwatch</h1>
+        <h2>Angular Stopwatch</h2>
+        <p><span class="numbers">{{ totalSeconds | date:"mm:ss" }}</span></p>
+        <button ng-click="start()">Start</button>
+        <button ng-click="stop()">Stop</button>
+        <button ng-click="reset()">Reset</button>
+    </div>
+</body>
+
+
+<script src="../lib/angular.min.js"></script>
+<script src="./timer.js"></script>
+</html>
