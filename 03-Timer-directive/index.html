@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="timerApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../lib/cloak.css" />
+    <link rel="stylesheet" href="site.css" />
+    <title>Angular Timer</title>
+</head>
+
+<div id="multi-counter-container">
+    <my-counter ng-repeat="idx in [1, 2, 3, 4]"></my-counter>
+</div>
+
+</body>
+
+
+<script src="../lib/angular.min.js"></script>
+<script src="./timer.js"></script>
+</html>

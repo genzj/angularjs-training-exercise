@@ -1,0 +1,16 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 100%;
+    transition: background-color 0.5s ease-in-out;
+}
+
+#multi-counter-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+my-counter {
+    width: 400px;
+    display: inline-block;
+}
