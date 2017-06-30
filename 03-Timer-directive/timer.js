@@ -2,14 +2,26 @@ angular
   .module("timerApp", [])
   .directive("myCounter", function () {
     return {
+      require: ['myCounter',],
       templateUrl: "counter.html",
-      controller: "TimerController"
+      controller: "TimerController",
+      scope: {
+        "initialMs": "=",
+      },
+      link: function(scope, element, attrs, controllers) {
+        var myCtrl = controllers[0];
+        myCtrl.setTo(scope.initialMs || 0);
+      }
     }
   })
-  .controller("TimerController", ["$scope", function ($scope) {
+  .controller("TimerController", ["$scope", "$element", function ($scope, $element) {
     var intervalHandler = null;
     var stopColor = '#ffa600';
     var runColor = '#00de64';
+
+    this.setTo = function (ms) {
+      $scope.totalMilliseconds = ms;
+    };
 
     $scope.totalMilliseconds = 0;
     $scope.color = stopColor;
